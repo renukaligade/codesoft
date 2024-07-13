@@ -1,0 +1,38 @@
+Explanation:
+
+Import necessary libraries:
+requests: For making HTTP requests to the OpenWeatherMap API.
+datetime: For handling date and time formatting.
+Define get_weather function:
+
+Takes city as input.
+Replaces "YOUR_API_KEY" with your actual OpenWeatherMap API key.
+Constructs the API URL using the base URL, API key, and city name.
+Makes an HTTP GET request to the API.
+If the request is successful (status code 200), parses the JSON response and returns it.
+If the request fails, returns None.
+Define format_weather_data function:
+
+Takes data (weather data) as input.
+Extracts relevant information from the data:
+main['temp']: Temperature in Kelvin
+weather[0]['description']: Weather description
+weather[0]['icon']: Weather icon code
+data['name']: City name
+data['dt']: Timestamp
+Converts the temperature from Kelvin to Celsius.
+Creates a user-friendly string with the formatted weather data.
+Includes a link to the weather icon.
+If data is None (city not found), returns a "City not found" message.
+Main execution block (if __name__ == "__main__":):
+
+Prompts the user to enter a city name.
+Calls get_weather to fetch data for the entered city.
+Calls format_weather_data to format the fetched data.
+Prints the formatted weather information to the console.
+To use this code:
+
+Get an API key: Sign up for a free OpenWeatherMap account and obtain an API key.
+Replace the placeholder: Replace "YOUR_API_KEY" in the code with your actual API key.
+Run the code: Execute the Python script. You will be prompted to enter a city name. The code will then display the current weather forecast for the entered city.
+Note: This code uses the OpenWeatherMap API, so you'll need an internet connection for it to work. You can explore the OpenWeatherMap API documentation for more details on available weather data and parameters
